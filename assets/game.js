@@ -1,4 +1,6 @@
 // Variables Here:
+var audio = new Audio("https://www.supermanhomepage.com/multimedia/Sounds/MP3/superman-movie.mp3");
+audio.play();
 // Track Random number:
 var randomNumber = "";
 
@@ -36,12 +38,22 @@ var crystalbutton3 = $("#crystalbutton3");
 var crystalbutton4 = $("#crystalbutton4");
 var crystalbuttons = $(".crystalclass");
 
+// Function that updates the wins...
+function updatewins() {
+    winsText.text(wins);
+}
+updatewins();
+// Function that updates the losses...
+function updatelosses() {
+    lossesText.text(losses)
+}
+updatelosses();
+
 // Game reset function
 function gamereset() {
-    randomnewNumber();
-    crystalrandomvalue();
     clickedscoredisplay = 0;
     totalscore = 0;
+    $("#clickedscore-text").text(totalscore);
 
 }
 // Functions here.
@@ -50,11 +62,14 @@ function randomnewNumber() {
     var newNumber = Math.floor((Math.random() * 101) + 1);
     randomNumber = parseInt(newNumber + 19);
     randomscoredisplay.text(randomNumber);
+
     console.log("New Random Number is: " + randomNumber);
 
 
 }
+randomnewNumber();
 console.log(randomNumber);
+
 
 // 2. Function for each crystal to genereate own random number:
 function crystalrandomvalue() {
@@ -70,6 +85,12 @@ function crystalrandomvalue() {
 crystalrandomvalue();
 console.log("crystal 1: " + crystal1, "Crystal 2: " + crystal2, "Crystal 3: " + crystal3, "Crystal 4: " + crystal4);
 console.log(crystalbutton1);
+function resetclicks() {
+    click1 = 0;
+    click2 = 0;
+    click3 = 0;
+    click4 = 0;
+}
 
 // 3. Function for onclick of crystal 1
 $("#crystalbutton1").on("click", function () {
@@ -80,24 +101,6 @@ $("#crystalbutton1").on("click", function () {
         totalscore = parseInt(click1 + click2 + click3 + click4);
         console.log(totalscore)
         $("#clickedscore-text").text(totalscore);
-        // if (totalscore > randomNumber) {
-        //     losses++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("You've Lost!! Better Luck This Round!!");
-
-        // }
-        // if (totalscore === randomNumber) {
-        //     wins++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("Congrats, You've won! Can you do it again?");
-        // }
-
     }
     else {
         click1 = parseInt(click1 + crystal1);
@@ -106,23 +109,26 @@ $("#crystalbutton1").on("click", function () {
         totalscore = parseInt(click1 + click2 + click3 + click4);
         console.log(totalscore)
         $("#clickedscore-text").text(totalscore);
-        // if (totalscore > randomNumber) {
-        //     losses++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("You've Lost!! Better Luck This Round!!");
-
-        // }
-        // if (totalscore === randomNumber) {
-        //     wins++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("Congrats, You've won! Can you do it again?");
-        // }
+        if (totalscore > randomNumber) {
+            losses++;
+            updatewins();
+            updatelosses();
+            alert("You've lost with " + totalscore + "!!  Better Luck Next Round!!");
+            gamereset();
+            randomnewNumber();
+            crystalrandomvalue();
+            resetclicks();
+        }
+        if (totalscore === randomNumber) {
+            wins++;
+            updatewins();
+            updatelosses();
+            alert("Congrats with " + totalscore + "!!  You've won! Can you do it again?");
+            gamereset();
+            randomnewNumber();
+            crystalrandomvalue();
+            resetclicks();
+        }
     }
 
 });
@@ -135,23 +141,7 @@ $("#crystalbutton2").on("click", function () {
         totalscore = parseInt(click1 + click2 + click3 + click4);
         console.log(totalscore)
         $("#clickedscore-text").text(totalscore);
-        // if (totalscore > randomNumber) {
-        //     losses++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("You've Lost!! Better Luck This Round!!");
 
-        // }
-        // if (totalscore === randomNumber) {
-        //     wins++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("Congrats, You've won! Can you do it again?");
-        // }
     }
     else {
         click2 = parseInt(click2 + crystal2);
@@ -160,23 +150,26 @@ $("#crystalbutton2").on("click", function () {
         totalscore = parseInt(click1 + click2 + click3 + click4);
         console.log(totalscore)
         $("#clickedscore-text").text(totalscore);
-        // if (totalscore > randomNumber) {
-        //     losses++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("You've Lost!! Better Luck This Round!!");
-
-        // }
-        // if (totalscore === randomNumber) {
-        //     wins++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("Congrats, You've won! Can you do it again?");
-        // }
+        if (totalscore > randomNumber) {
+            losses++;
+            updatewins();
+            updatelosses();
+            alert("You've lost with " + totalscore + "!!  Better Luck Next Round!!");
+            gamereset();
+            randomnewNumber();
+            crystalrandomvalue();
+            resetclicks();
+        }
+        if (totalscore === randomNumber) {
+            wins++;
+            updatewins();
+            updatelosses();
+            alert("Congrats with " + totalscore + "!!  You've won! Can you do it again?");
+            gamereset();
+            randomnewNumber();
+            crystalrandomvalue();
+            resetclicks();
+        }
     }
 
 });
@@ -189,23 +182,7 @@ $("#crystalbutton3").on("click", function () {
         totalscore = parseInt(click1 + click2 + click3 + click4);
         console.log(totalscore)
         $("#clickedscore-text").text(totalscore);
-        // if (totalscore > randomNumber) {
-        //     losses++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("You've Lost!! Better Luck This Round!!");
 
-        // }
-        // if (totalscore === randomNumber) {
-        //     wins++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("Congrats, You've won! Can you do it again?");
-        // }
     }
     else {
         click3 = parseInt(click3 + crystal3);
@@ -214,23 +191,26 @@ $("#crystalbutton3").on("click", function () {
         totalscore = parseInt(click1 + click2 + click3 + click4);
         console.log(totalscore)
         $("#clickedscore-text").text(totalscore);
-        // if (totalscore > randomNumber) {
-        //     losses++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("You've Lost!! Better Luck This Round!!");
-
-        // }
-        // if (totalscore === randomNumber) {
-        //     wins++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("Congrats, You've won! Can you do it again?");
-        // }
+        if (totalscore > randomNumber) {
+            losses++;
+            updatewins();
+            updatelosses();
+            alert("You've lost with " + totalscore + "!!  Better Luck Next Round!!");
+            gamereset();
+            randomnewNumber();
+            crystalrandomvalue();
+            resetclicks();
+        }
+        if (totalscore === randomNumber) {
+            wins++;
+            updatewins();
+            updatelosses();
+            alert("Congrats with " + totalscore + "!!  You've won! Can you do it again?");
+            gamereset();
+            randomnewNumber();
+            crystalrandomvalue();
+            resetclicks();
+        }
     }
 
 });
@@ -243,23 +223,7 @@ $("#crystalbutton4").on("click", function () {
         totalscore = parseInt(click1 + click2 + click3 + click4);
         console.log(totalscore)
         $("#clickedscore-text").text(totalscore);
-        // if (totalscore > randomNumber) {
-        //     losses++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "";
-        //     totalscore = 0;
-        //     directionsText.text("You've Lost!! Better Luck This Round!!");
 
-        // }
-        // if (totalscore === randomNumber) {
-        //     wins++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "-";
-        //     totalscore = 0;
-        //     directionsText.text("Congrats, You've won! Can you do it again?");
-        // }
     }
     else {
         click4 = parseInt(click4 + crystal4);
@@ -268,60 +232,26 @@ $("#crystalbutton4").on("click", function () {
         totalscore = parseInt(click1 + click2 + click3 + click4);
         console.log(totalscore)
         $("#clickedscore-text").text(totalscore);
-        // if (totalscore > randomNumber) {
-        //     losses++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "-";
-        //     totalscore = 0;
-        //     directionsText.text("You've Lost!! Better Luck This Round!!");
-
-        // }
-        // if (totalscore === randomNumber) {
-        //     wins++;
-        //     randomnewNumber();
-        //     crystalrandomvalue();
-        //     clickedscoredisplay = "-";
-        //     totalscore = 0;
-        //     directionsText.text("Congrats, You've won! Can you do it again?");
-        // }
+        if (totalscore > randomNumber) {
+            losses++;
+            updatewins();
+            updatelosses();
+            alert("You've lost with " + totalscore + "!!  Better Luck Next Round!!");
+            gamereset();
+            randomnewNumber();
+            crystalrandomvalue();
+            resetclicks();
+        }
+        if (totalscore === randomNumber) {
+            wins++;
+            updatewins();
+            updatelosses();
+            alert("Congrats with " + totalscore + "!!  You've won! Can you do it again?");
+            gamereset();
+            randomnewNumber();
+            crystalrandomvalue();
+            resetclicks();
+        }
     }
 
 });
-
-if ($(parseInt("#clickedscore-text") > randomNumber)) {
-    losses++;
-    randomnewNumber();
-    crystalrandomvalue();
-    clickedscoredisplay = "-";
-    totalscore = 0;
-    directionsText.text("You've Lost!! Better Luck This Round!!");
-
-}
-if ($(parseInt("#clickedscore-text") === randomNumber)) {
-    wins++;
-    randomnewNumber();
-    crystalrandomvalue();
-    clickedscoredisplay = "-";
-    totalscore = 0;
-    directionsText.text("Congrats, You've won! Can you do it again?");
-}
-
-// 4. Function for game reset after win or lose. This would be an if function for win else lose to reset game and up win or lose score.
-
-
-// Function that updates the wins...
-function updatewins() {
-    $("#wins").innerHTML = "Wins: " + wins;
-}
-// Function that updates the losses...
-function updatelosses() {
-    $("#losses").innerHTML = "Losses: " + losses;
-}
-// function updateclicked() {
-//     $("#clickedscore-text").innerHTML = totalscore;
-// }
-
-
-// Call the Functions to start the game:
-randomnewNumber()

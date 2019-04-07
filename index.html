@@ -17,40 +17,33 @@
 </head>
 
 <body>
-
+        <!-- <audio controls autoplay>
+                <source src="https://www.supermanhomepage.com/multimedia/Sounds/MP3/superman-movie.mp3" type="audio/ogg">
+                <source src="https://www.supermanhomepage.com/multimedia/Sounds/MP3/superman-movie.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio> -->
 
     <!-- This is the header title for the game, maybe use jumbotron... -->
+    <div class="container-fluid">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4" style="text-align: center; font-size: 60px">Crystal Collector</h1>
-            <p class="lead" id="directions-text">To get started...</p>
+            <h3 class="display-4" style="text-align: center;">Pick your Kryptonite!!!</h3>
+            <p class="lead" id="directions-text" style="text-align: center;" >Click on Kryptonite Crystals in correct sequence to match the random number generated. If you pass the score of the Random Number, you lose. Can you save Superman from the Kryptonite?</p>
         </div>
     </div>
     <!-- this section is for current total score clicked and computer random generated score. -->
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
                     <h5 style="text-align: center" class="card-title">Your total Score:</h5>
-                    <h1 style="text-align: center; font-size: 50px" id="clickedscore-text">Choose a Crystal to Start!
+                    <h1 style="text-align: center" id="clickedscore-text">0
                     </h1>
 
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 style="text-align: center" class="card-title">Computer Score:</h5>
-                    <h1 style="text-align: center; font-size: 50px" id="random-text">Total of Current Score here</h1>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- this section is for win and loss counts: -->
-    <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-2">
             <div class="card">
                 <div class="card-body">
                     <h3 style="text-align: center" class="card-title">Wins:</h3>
@@ -59,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-2">
             <div class="card">
                 <div class="card-body">
                     <h3 style="text-align: center" class="card-title">Losses:</h3>
@@ -68,53 +61,51 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 style="text-align: center" class="card-title">Random Number to Beat:</h5>
+                    <h1 style="text-align: center" id="random-text">Total of Current Score here</h1>
+
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- this section is for win and loss counts: -->
+
     <div>
 
     </div>
     <!-- This div is for the section with instructions on screen. thinking of moving to bottom... -->
     <div style="text-align: center" class="row">
 
-        <div id="crystalbutton1" class="card; col-lg-3" style="width: 18rem;">
+        <div id="crystalbutton1" class="card; col-sm-3" style="width: 10rem;">
             <img src="assets/images/blackcrystal.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h1 class="card-text">Button 1</h1>
+                <h6 class="card-text">Black Kryptonite</h6>
             </div>
         </div>
-        <div class="card; col-lg-3" style="width: 18rem;">
+        <div class="card; col-sm-3" style="width: 10rem;">
             <img id="crystalbutton2" src="assets/images/bluecrystal.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h1 class="card-text">Button 2</h1>
+                <h6 class="card-text">Blue Kryptonite</h6>
             </div>
         </div>
-        <div id="crystalbutton3" class="card; col-lg-3" style="width: 18rem;">
+        <div id="crystalbutton3" class="card; col-sm-3" style="width: 10rem;">
             <img src="assets/images/redcrystal.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h1 class="card-text">Button 3</h1>
+                <h6 class="card-text">Red Kryptonite</h6>
             </div>
         </div>
-        <div id="crystalbutton4" class="card; col-lg-3" style="width: 18rem;">
+        <div id="crystalbutton4" class="card; col-sm-3" style="width: 10rem;">
             <img src="assets/images/greencrystal.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h1 class="card-text">Button 4</h1>
+                <h6 class="card-text">Green Kryptonite</h6>
             </div>
         </div>
 
     </div>
-
-    <!-- this div for nuimber to display and wins and losses box -->
-    <!-- <div class="row"> -->
-
-
-    <!-- </div> -->
-
-    <!-- this div is for the 4 clickable images with random values -->
-    <!-- <div class="row"> -->
-
-
-    <!-- </div> -->
-
-    <!-- this div is for the current total score for clicked crystals -->
     <div>
 
 
@@ -123,6 +114,7 @@
 
 
 
+    </div>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/game.js"></script>
