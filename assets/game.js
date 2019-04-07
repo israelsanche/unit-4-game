@@ -59,8 +59,8 @@ function gamereset() {
 // Functions here.
 // 1. Function to create a random number for user to guess:
 function randomnewNumber() {
-    var newNumber = Math.floor((Math.random() * 101) + 1);
-    randomNumber = parseInt(newNumber + 19);
+    var newNumber = Math.floor((Math.random() * 102) + 1);
+    randomNumber = parseInt(newNumber + 18);
     randomscoredisplay.text(randomNumber);
 
     console.log("New Random Number is: " + randomNumber);
