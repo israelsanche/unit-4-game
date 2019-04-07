@@ -1,1 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Collector</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+</head>
+
+<body>
+
+
+    <!-- This is the header title for the game, maybe use jumbotron... -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4" style="text-align: center; font-size: 60px">Crystal Collector</h1>
+            <p class="lead" id="directions-text">To get started...</p>
+        </div>
+    </div>
+    <!-- this section is for current total score clicked and computer random generated score. -->
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 style="text-align: center" class="card-title">Your total Score:</h5>
+                    <h1 style="text-align: center; font-size: 50px" id="clickedscore-text">Choose a Crystal to Start!
+                    </h1>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 style="text-align: center" class="card-title">Computer Score:</h5>
+                    <h1 style="text-align: center; font-size: 50px" id="random-text">Total of Current Score here</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- this section is for win and loss counts: -->
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="text-align: center" class="card-title">Wins:</h3>
+                    <h5 style="text-align: center" id="wins-text">-</h5>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="text-align: center" class="card-title">Losses:</h3>
+                    <h5 style="text-align: center" id="losses-text">-</h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+    <!-- This div is for the section with instructions on screen. thinking of moving to bottom... -->
+    <div style="text-align: center" class="row">
+
+        <div id="crystalbutton1" class="card; col-lg-3" style="width: 18rem;">
+            <img src="assets/images/blackcrystal.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h1 class="card-text">Button 1</h1>
+            </div>
+        </div>
+        <div class="card; col-lg-3" style="width: 18rem;">
+            <img id="crystalbutton2" src="assets/images/bluecrystal.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h1 class="card-text">Button 2</h1>
+            </div>
+        </div>
+        <div id="crystalbutton3" class="card; col-lg-3" style="width: 18rem;">
+            <img src="assets/images/redcrystal.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h1 class="card-text">Button 3</h1>
+            </div>
+        </div>
+        <div id="crystalbutton4" class="card; col-lg-3" style="width: 18rem;">
+            <img src="assets/images/greencrystal.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h1 class="card-text">Button 4</h1>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- this div for nuimber to display and wins and losses box -->
+    <!-- <div class="row"> -->
+
+
+    <!-- </div> -->
+
+    <!-- this div is for the 4 clickable images with random values -->
+    <!-- <div class="row"> -->
+
+
+    <!-- </div> -->
+
+    <!-- this div is for the current total score for clicked crystals -->
+    <div>
+
+
+    </div>
+
+
+
+
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/game.js"></script>
+    <script type="text/javascript">
+
+        // $("#random-text").text("Must Beat: " + randomNumber)
+        console.log(crystal1);
+        console.log(crystal2);
+        console.log(crystal3);
+        console.log(crystal4);
+
+
+    </script>
+
+</body>
+
+</html>
