@@ -1,5 +1,5 @@
 // Variables Here:
-var audio = new Audio("https://www.supermanhomepage.com/multimedia/Sounds/MP3/superman-movie.mp3");
+var audio = new Audio("assets/superman.mp3");
 audio.play();
 // Track Random number:
 var randomNumber = "";
