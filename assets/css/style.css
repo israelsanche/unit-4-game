@@ -26,3 +26,44 @@ body {
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
 }
+
+@media only screen and (max-width: 600px) {
+  
+    .display-4 {
+        font-size: small;
+        font-weight: 300;
+        line-height: 1;
+        font-display: bold;
+    }
+    .lead {
+        font-size: .7rem;
+        font-weight: 100;
+    }
+    .jumbotron {
+        background-color: #000000;
+        padding: 1rem 0rem;
+        margin-bottom: auto;
+        font-size: 1px;
+    }
+    .card-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: .5rem;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        /* margin-right: -15px; */
+        /* margin-left: -15px; */
+    }
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 0;
+
+    }
+    .h1,.h5, .h3, h3, h1, h5 {
+        font-size: .7rem;
+    }
+    .row {
+        margin-left: 5px;
+    }
+  }
